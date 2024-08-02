@@ -11,6 +11,11 @@ DB_DATABASE=test-konnco
 DB_USERNAME=root
 DB_PASSWORD=
 
+add midtrans server and client key
+MIDTRANS_SERVER_KEY=your-server-key
+MIDTRANS_CLIENT_KEY=your-client-key
+MIDTRANS_IS_PRODUCTION=false
+
 php artisan migrate
 php artisan db:seed --class=ProductSeeder
 php artisan serve

@@ -24,7 +24,7 @@ class PaymentController extends Controller
             $total += $item->product->price * $item->quantity;
         }
 
-        Config::$serverKey = 'SB-Mid-server-dQj6mNaiHO1H72GnTZpySkGM';
+        Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         Config::$isProduction = false;
         Config::$isSanitized = true;
         Config::$is3ds = true;

@@ -35,7 +35,7 @@
 <body>
     <h1>Checkout</h1>
     <button id="pay-button">Pay Now</button>
-    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-BHaa69K19gItvHrI"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{  env('MIDTRANS_CLIENT_KEY') }}"></script>
     <script type="text/javascript">
         document.getElementById('pay-button').onclick = function () {
             snap.pay('{{ $snapToken }}', {
