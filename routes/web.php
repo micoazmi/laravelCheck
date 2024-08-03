@@ -24,3 +24,4 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::post('/checkout', [PaymentController::class, 'checkout']);
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 Route::get('/payment/finish', [PaymentController::class, 'finish'])->name('payment.finish');
+

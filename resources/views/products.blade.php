@@ -1,3 +1,10 @@
+<?php
+function rupiah($angka) {
+    $hasil = 'Rp ' . number_format($angka, 2, ",", ".");
+    return $hasil;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +97,7 @@
             <div>
                 <h2>{{ $product->name }}</h2>
                 <p>{{ $product->description }}</p>
-                <p>{{ $product->price }}</p>
+                <p><?php echo rupiah($product->price); ?></p>
             </div>
             <form action="/add-to-cart/{{ $product->id }}" method="POST">
                 @csrf

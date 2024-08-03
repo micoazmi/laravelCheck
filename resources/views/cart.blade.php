@@ -1,3 +1,9 @@
+<?php
+function rupiah($angka) {
+    $hasil = 'Rp ' . number_format($angka, 2, ",", ".");
+    return $hasil;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,8 +86,8 @@
                 <h2>{{ $item->product->name }}</h2>
                 <p>{{ $item->product->description }}</p>
                 <p>Quantity: {{ $item->quantity }}</p>
-                <p>Price: {{ $item->product->price }}</p>
-                <p>Subtotal: {{ $item->product->price * $item->quantity }}</p>
+                <p>Price:<?php echo rupiah($item->product->price) ?> </p>
+                <p>Subtotal:<?php echo rupiah($item->product->price * $item->quantity)?></p>
                 @php
                     $total += $item->product->price * $item->quantity;
                 @endphp
@@ -94,7 +100,7 @@
         </li>
         @endforeach
     </ul>
-    <div class="total">Total: {{ $total }}</div>
+    <div class="total">Total:<?php echo rupiah($total)?> </div>
     <form action="/checkout" method="POST">
         @csrf
         <button type="submit">Checkout</button>
